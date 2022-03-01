@@ -4,6 +4,10 @@
 
 The App class is the base for creating Kivy applications. Think of it as your main entry point into the Kivy run loop. In most cases, you subclass this class and make your own app. You create an instance of your specific app class and then, when you are ready to start the application's life cycle, you call your instance's App.run() method.
 
+### .run
+
+Lauches the app in standalone mode.
+
 https://kivy.org/doc/stable/api-kivy.app.html
 
 ## Button
@@ -45,5 +49,23 @@ Button:
 	on_release: print("ahhh")
 	on_state: print("my current state is {}".format(self.state))
 ```
+
+### text (FROM LABEL)
+
+Text of the label.
+
+Creation of a simple hello world:
+
+```python
+widget = Label(text='Hello world')
+```
+
+If you want to create the widget with an unicode string, use:
+
+```python
+widget = Label(text=u'My unicode string')
+```
+
+text is a StringProperty and defaults to `´.
 
 https://kivy.org/doc/stable/api-kivy.uix.button.html

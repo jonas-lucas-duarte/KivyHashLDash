@@ -45,4 +45,31 @@ BoxLayout:
 		text: 'this on bottom'
 ```
 
+### add_widget(widget, index=0, canvas=None) (FROM WIDGET)
+
+Add a new widget as a child of this widget.
+
+#### widget: Widget
+
+Widget to add to out list of children.
+
+#### index: int, defaults to 0
+
+Index to insert the widget in the list. Notice that the default of 0 means the widget is inserted at the beginning of the list and will thus be drawn on top of other sibiling widgets. For a full discussion of the index and widget hierarchy, please see the Widget Programming Guide.
+
+#### canvas: str, defaults to None
+
+Canvas to add widget's canvas to. Can be `before´, `after´ or None for the default canvas.
+
+```python
+from kivy.uix.button import Button
+from kivy.uix.slider import Slider
+root = Widget()
+root.add_widget(Button())
+slider = Slider()
+root.add_widget(slider)
+```
+
+https://kivy.org/doc/stable/api-kivy.uix.boxlayout.html
+
 ## Label

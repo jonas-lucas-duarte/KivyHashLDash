@@ -73,3 +73,39 @@ root.add_widget(slider)
 https://kivy.org/doc/stable/api-kivy.uix.boxlayout.html
 
 ## Label
+
+The Label widget is for rendering text. It supports ascii and unicode strings:
+
+```python
+# hello world text
+l = Label(text='Hello world')
+
+# unicode text; can only display glyphs that are available in the font
+l = Label(text=u'Hello world' + unichr(2764))
+
+# multiline text
+l = Label(text='Multi\nLine')
+
+# size
+l = Label(text='Hello world', font_size='20sp')
+```
+
+### text
+
+Text of the Label.
+
+Creation of a simple hello world:
+
+```python
+widget = Label(text='Hello world')
+```
+
+If you want to create the widget with an unicode string, use:
+
+```python
+widget = Label(text=u'My unicode string')
+```
+
+text is a StringProperty and defaults to `´.
+
+https://kivy.org/doc/stable/api-kivy.uix.label.html

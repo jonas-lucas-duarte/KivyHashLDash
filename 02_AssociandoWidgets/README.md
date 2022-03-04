@@ -59,7 +59,7 @@ Index to insert the widget in the list. Notice that the default of 0 means the w
 
 #### canvas: str, defaults to None
 
-Canvas to add widget's canvas to. Can be `before´, `after´ or None for the default canvas.
+Canvas to add widget's canvas to. Can be \`before´, \`after´ or None for the default canvas.
 
 ```python
 from kivy.uix.button import Button

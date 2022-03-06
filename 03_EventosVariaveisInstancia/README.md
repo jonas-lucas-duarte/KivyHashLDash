@@ -93,3 +93,21 @@ https://kivy.org/doc/stable/api-kivy.uix.button.html
 **Scale-independent Pixels - This is like the dp unit, but it is also scaled by the user's font size preference. We recommend you use this unit when specifying font sizes, so the font size will be adjusted to both the screen density and the user's preference.**
 
 https://kivy.org/doc/stable/api-kivy.metrics.html
+
+---
+
+## Button Behavior
+
+**The ButtonBehavior mixin class provides Button behavior. You can combine this class with other widgets, such as an Image, to provide alternative buttons that preserve Kivy button behavior.**
+
+**For an overview of behaviors, please refer to the behaviors documentation.**
+
+### Events
+
+*on_press*
+
+**Fired when the button is pressed**
+
+*on_release*
+
+**Fired when the button is released (i.e. the touch/click that pressed the button goes away).**

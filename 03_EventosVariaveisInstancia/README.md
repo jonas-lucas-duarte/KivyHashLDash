@@ -74,6 +74,11 @@ font_size is a NumericProperty and defaults to 15sp.
 
 https://kivy.org/doc/stable/api-kivy.uix.button.html
 
-## * Metrics *
+---
 
-*A screen is defined by its physical size, density and resolution. These factors are essential for creating UI's with correct size everywhere.*
+## Metrics
+
+**A screen is defined by its physical size, density and resolution. These factors are essential for creating UI's with correct size everywhere.
+
+
+**

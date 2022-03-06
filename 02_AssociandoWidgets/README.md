@@ -45,6 +45,12 @@ BoxLayout:
 		text: 'this on bottom'
 ```
 
+### orientation
+
+Orientation of the layout.
+
+orientation is an OptionProperty and defaults to \`horizontal´. Can be \`vertical´ or \`horizontal´.
+
 ### add_widget(widget, index=0, canvas=None) (FROM WIDGET)
 
 Add a new widget as a child of this widget.

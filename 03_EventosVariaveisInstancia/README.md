@@ -111,3 +111,5 @@ https://kivy.org/doc/stable/api-kivy.metrics.html
 *on_release*
 
 **Fired when the button is released (i.e. the touch/click that pressed the button goes away).**
+
+https://kivy.org/doc/stable/api-kivy.uix.behaviors.button.html

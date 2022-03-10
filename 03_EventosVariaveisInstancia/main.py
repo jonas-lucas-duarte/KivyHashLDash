@@ -17,6 +17,7 @@ class Test(App):
 
         box.add_widget(button)
         box.add_widget(self.label)
+        
         return box
 
     # Método da classe

@@ -1,0 +1,18 @@
+# Arquivo com nome da class App
+<Incrementador>:
+	# Propriedades
+	orientation: 'vertical'
+
+	# Adicionando Widget (Button)
+	Button: 
+		# Propriedades do Widget
+		text: 'Incrementar'
+		font_size: 30
+		on_release: label.text. = str(int(label.text) + 1)
+
+	# Adicionando Widget (Label)
+	Label:
+		# Propriedades do Widget
+		id: label
+		text: '1'
+		font_size: 30

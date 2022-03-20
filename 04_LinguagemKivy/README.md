@@ -155,7 +155,7 @@ Class definitions may contain ids which can be used as a keywords:
 		text: 'The state of the other button is %s' % btn1.state
 ```
 
-Please note that the *id* will not be available in the widget instance: it is used exclusively for external references. *id* id a weakref to the widget, and not he widget itself. The widget itself can be accessed with *<id>.__self__*(*btn1.__self__* in this case).
+Please note that the *id* will not be available in the widget instance: it is used exclusively for external references. *id* id a weakref to the widget, and not he widget itself. The widget itself can be accessed with *<id>.\_\_self\_\_*(*btn1.\_\_self\_\_* in this case).
 
 When the kv file is processed, weakrefs to all the widgets tagged with ids are added to the root widget's *ids* dictionary. In other words, following on from the example above, the buttons state could also be accessed as follows:
 

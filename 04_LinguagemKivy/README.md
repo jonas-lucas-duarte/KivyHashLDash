@@ -105,13 +105,42 @@ Both the `load_file()` and the `load_string()` methods return the root widget de
 
 When you specify a property's value, is evaluated as a Python expression. This expression can be static or dynamic, which means that the value can use the values of other properties using reserved keywords.
 
-	self
+##### self
 
-		The keyword self references the "current widget instance":
+The keyword self references the "current widget instance":
 
-		```python
-		Button:
-			text: 'My state is %s' % self.state
-		```
+```python
+Button:
+	text: 'My state is %s' % self.state
+```
+
+##### root
+
+This keyword is available only in rule definitions and represents the root widget of the rule (the first instance of the rule):
+
+```python
+<MyWidget>:
+	custom: 'Hello world'
+	Button:
+		text: root.custom
+```
+
+##### app
+
+This keyword always refers to your app instance. It's equivalent to a call to `kivy.app.App.get_running_app()` in Python.
+
+```python
+Label:
+	text: app.name
+```
+
+##### args
+
+This keyword is available in on_<action> callbacks. It refers to the arguments passed to the callback.
+
+```python
+TextInput:
+	on_focus: self.insert_text("Focus" if args[1] else "No focus")
+```
 
 https://kivy.org/doc/stable/api-kivy.lang.html

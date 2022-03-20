@@ -101,4 +101,17 @@ Button:
 
 Both the `load_file()` and the `load_string()` methods return the root widget defined in your kv file/string. They will also add any class and template definitions to the `Factory` for later usage.
 
+### Value Expressions, on_property Expressions, ids, and Reserved Keywords
+
+When you specify a property's value, is evaluated as a Python expression. This expression can be static or dynamic, which means that the value can use the values of other properties using reserved keywords.
+
+	self
+
+		The keyword self references the "current widget instance":
+
+		```python
+		Button:
+			text: 'My state is %s' % self.state
+		```
+
 https://kivy.org/doc/stable/api-kivy.lang.html

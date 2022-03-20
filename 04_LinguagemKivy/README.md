@@ -167,6 +167,6 @@ state = widget.ids["btn1"].state
 state = widget.ids.btn1.state
 ```
 
-Note that the outhermost widget applies the kv rules to all its inner widgets before any other rules are applied. This means if an inner widget ccontains ids, these ids may not be available during the inner widget's *__init__* function.
+Note that the outhermost widget applies the kv rules to all its inner widgets before any other rules are applied. This means if an inner widget ccontains ids, these ids may not be available during the inner widget's *\_\_init\_\_* function.
 
 https://kivy.org/doc/stable/api-kivy.lang.html

@@ -143,4 +143,30 @@ TextInput:
 	on_focus: self.insert_text("Focus" if args[1] else "No focus")
 ```
 
+#### ids
+
+Class definitions may contain ids which can be used as a keywords:
+
+```python
+<MyWidget>:
+	Button:
+		id: btn1
+	Button:
+		text: 'The state of the other button is %s' % btn1.state
+```
+
+Please note that the *id* will not be available in the widget instance: it is used exclusively for external references. *id* id a weakref to the widget, and not he widget itself. The widget itself can be accessed with *<id>.__self__*(*btn1.__self__* in this case).
+
+When the kv file is processed, weakrefs to all the widgets tagged with ids are added to the root widget's *ids* dictionary. In other words, following on from the example above, the buttons state could also be accessed as follows:
+
+```python
+widget = MyWidget()
+state = widget.ids["btn1"].state
+
+# Or, as an alternative syntax
+state = widget.ids.btn1.state
+```
+
+Note that the outhermost widget applies the kv rules to all its inner widgets before any other rules are applied. This means if an inner widget ccontains ids, these ids may not be available during the inner widget's *__init__* function.
+
 https://kivy.org/doc/stable/api-kivy.lang.html

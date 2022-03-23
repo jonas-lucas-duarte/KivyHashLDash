@@ -173,4 +173,4 @@ https://kivy.org/doc/stable/api-kivy.lang.html
 
 ## More Information of Kv Lang
 
-
+[Click Here!](KV_LANG.md)

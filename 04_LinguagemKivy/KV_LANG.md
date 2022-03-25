@@ -60,40 +60,56 @@ There are three keywords specific to the Kv language:
 
 - *self*: always refer to the current widget
 
-## Special syntax
+## Instantiate children
 
-There is a special syntax to define values for the whole Kv context.
-
-To access Python modules and classes from kv, use `#:import`
+To declare a widget instance of some class as a child widget, just declare that child inside the rule:
 
 ```python
-#:import name x.y.z
-#:import isdir os.path.isdir
-#:import np numpy
+MyRootWidget:
+	BoxLayout:
+		Button:
+		Button:
 ```
 
-is equivalent to:
+The example above defines that our root widget, an instance of *MyRootWidget*, has a child that is an instance of the `BoxLayout`, and that BoxLayout further has two children, instances of hte `Button` class.
+
+The Python equivalent of this code might be:
 
 ```python
-from x.y import z as name
-from os.path import isdir
-import numpy as np
+root = MyRootWidget()
+box = BoxLayout()
+box.add_widget(Button())
+box.add_widget(Button())
+root.add_wiget(box)
 ```
 
-in Python
+Which you may find less nice, both to read and to write.
 
-To set a global value, use `#:set`
+Of course, in Python, you can pass keyword arguments to yout widgets at creation to specify their behaviour. For example, to set the number of columns of a `gridlayout`, we would do:
 
 ```python
-#:set name value
+grid = GridLayout(cols=3)
 ```
 
-is equivalent to:
+To do the same thing in kv, you can set properties of the child widget directly in the rule:
 
 ```python
-name = value
+GridLayout:
+	cols: 3
 ```
 
-in Python.
+The value is evaluated as a Python expression, and all the properties used in the expression will be observed, that means that if you had something like this in Python (this assume *self* is a widget with a *data* `ListProperty`):
+
+```python
+grid = GridLayout(cols=len(self.data))
+self.bind(data=grid.setter('cols'))
+```
+
+To have your display updated when your data change, you can now have just:
+
+```python
+GridLayout:
+	cols: len(root.data)
+```
 
 https://kivy.org/doc/stable/guide/lang.html

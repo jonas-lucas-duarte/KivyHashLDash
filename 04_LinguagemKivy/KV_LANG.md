@@ -34,4 +34,30 @@ or
 Builder.load_string(kv_string)
 ```
 
+## Rule context
+
+A Kv source constitutes of *rules* which are used to describe the content of a Widget. You can hvae one *root* rule, and any number of *class* or *template* rules.
+
+The *root* rule is declared by declaring the class of yout root widget, without any indentation, followed by *:* and will be set as the *root* attribute of the App instance:
+
+```python
+Widget:
+```
+
+A *class* rule, delcared by the name of a widget class between < > and followed by *:*, defines the appearance and behavior of any instance of that class:
+
+```python
+<MyWidget>:
+```
+
+Rules use indentation for delimitation, like Python. Indentation should be four spaces per level, like the Python style guide [recommends](https://peps.python.org/pep-0008/#indentation)
+
+There are three keywords specific to the Kv language:
+
+- *app*: always refers to the instance of yout application.
+
+- *root*: refers to the base widget/template in the current rule
+
+- *self*: always refer to the current widget
+
 https://kivy.org/doc/stable/guide/lang.html

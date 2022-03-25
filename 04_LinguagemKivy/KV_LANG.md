@@ -60,4 +60,40 @@ There are three keywords specific to the Kv language:
 
 - *self*: always refer to the current widget
 
+## Special syntax
+
+There is a special syntax to define values for the whole Kv context.
+
+To access Python modules and classes from kv, use `#:import`
+
+```python
+#:import name x.y.z
+#:import isdir os.path.isdir
+#:import np numpy
+```
+
+is equivalent to:
+
+```python
+from x.y import z as name
+from os.path import isdir
+import numpy as np
+```
+
+in Python
+
+To set a global value, use `#:set`
+
+```python
+#:set name value
+```
+
+is equivalent to:
+
+```python
+name = value
+```
+
+in Python.
+
 https://kivy.org/doc/stable/guide/lang.html

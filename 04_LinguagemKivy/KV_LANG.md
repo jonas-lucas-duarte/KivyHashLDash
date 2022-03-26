@@ -147,4 +147,53 @@ TextInput:
 	on_focus: print(args)
 ```
 
+## Referencing Widgets
+
+In a widget tree there is ofthen a need to access/reference other widgets. The Kv Language provides a way to do this using id's. Think of them as class level variables that can only be used in the Kv language. Consider the following:
+
+```python
+<MyFirstWidget>:
+	Button:
+		id: f_but
+	TextInput:
+		text: f_but.state
+
+<MySecondWidget>:
+	Button:
+		id: s_but
+	TextInput:
+		text: s_but.state
+```
+
+An `id` is limited in scope to the rule it is declared in, so in the code aboce `s_but` can not be accessed outside the `<MySecondWidget>` rule.
+
+Warning
+
+When assigning a value to `id`, remeber that the value isn't a string. There are no quotes: good -> `id: value`, bad -> `id: 'value'`
+
+An `id` is a `weakref` to the widget and not the widget itself. As a consequence, storing the `id` is not sufficient to keep the widget from being garbage colleted. To demonstrate:
+
+```python
+<MyWidget>:
+	label_widget: label_widget
+	Button:
+		text: 'Add Button'
+		on_press: root.add_widget(label_widget)
+	Button:
+		text: 'Remove Button'
+		on_press: root.remove_widget(label_widget)
+	Label:
+		id: label_widget
+		text: 'widget'
+```
+
+Although a reference to `label_widget` is stored in `MyWidget`, it is not sufficient to keep the object alivev once other references have been removed because it's only a weakref. Therefore, after the remove button is clicked (which removes any direct reference to the widget) and the window is resized (which calls the garbage collector resulting in the deletion of `label_widget`), when the add button is clicked to add the widget back, a `ReferenceError: weakly-referenced object no longer exists` will be thrown. 
+
+To keep the widget alive, a direct reference to the `label_widget` widget must be kept. This is achieved usind `id.__self__` or `label_widget.__self__` in this case. The correct way to do would be:
+
+```python
+<MyWidget>:
+	label_widget: label_widget.__self__
+```
+
 https://kivy.org/doc/stable/guide/lang.html

@@ -112,9 +112,8 @@ GridLayout:
 	cols: len(root.data)
 ```
 
-Note
-
-Widget names should start with upper case letters while property names should start with lower case ones. Following the [PEP8 Naming Conventions](https://github.com/jonas-lucas-duarte/KivyHashLDash/blob/main/04_LinguagemKivy/PEP_8.md) is encouraged.
+> Note
+> Widget names should start with upper case letters while property names should start with lower case ones. Following the [PEP8 Naming Conventions](https://github.com/jonas-lucas-duarte/KivyHashLDash/blob/main/04_LinguagemKivy/PEP_8.md) is encouraged.
 
 ## Event Bindings
 
@@ -168,7 +167,6 @@ In a widget tree there is ofthen a need to access/reference other widgets. The K
 An `id` is limited in scope to the rule it is declared in, so in the code aboce `s_but` can not be accessed outside the `<MySecondWidget>` rule.
 
 > Warning
->
 > When assigning a value to `id`, remeber that the value isn't a string. There are no quotes: good -> `id: value`, bad -> `id: 'value'`
 
 An `id` is a `weakref` to the widget and not the widget itself. As a consequence, storing the `id` is not sufficient to keep the widget from being garbage colleted. To demonstrate:

@@ -167,9 +167,9 @@ In a widget tree there is ofthen a need to access/reference other widgets. The K
 
 An `id` is limited in scope to the rule it is declared in, so in the code aboce `s_but` can not be accessed outside the `<MySecondWidget>` rule.
 
-Warning
-
-When assigning a value to `id`, remeber that the value isn't a string. There are no quotes: good -> `id: value`, bad -> `id: 'value'`
+> Warning
+>
+> When assigning a value to `id`, remeber that the value isn't a string. There are no quotes: good -> `id: value`, bad -> `id: 'value'`
 
 An `id` is a `weakref` to the widget and not the widget itself. As a consequence, storing the `id` is not sufficient to keep the widget from being garbage colleted. To demonstrate:
 

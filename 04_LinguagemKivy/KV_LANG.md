@@ -112,4 +112,8 @@ GridLayout:
 	cols: len(root.data)
 ```
 
+Note
+
+Widget names should start with upper case letters while property names should start with lower case ones. Following the [PEP8 Naming Conventions](https://github.com/jonas-lucas-duarte/KivyHashLDash/blob/main/04_LinguagemKivy/PEP_8.md) is encouraged.
+
 https://kivy.org/doc/stable/guide/lang.html

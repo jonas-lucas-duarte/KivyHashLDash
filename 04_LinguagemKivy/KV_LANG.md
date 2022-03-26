@@ -116,4 +116,35 @@ Note
 
 Widget names should start with upper case letters while property names should start with lower case ones. Following the [PEP8 Naming Conventions](https://github.com/jonas-lucas-duarte/KivyHashLDash/blob/main/04_LinguagemKivy/PEP_8.md) is encouraged.
 
+## Event Bindings
+
+You can bind to events in Kv using the ":" systanx, that is, associating a callback to an event:
+
+```python
+Widget:
+	on_size: my_callback()
+```
+
+You can pass the values dispatched by the signal using the *args* keyword:
+
+```python
+TextInput:
+	on_text: app.search(args[1])
+```
+
+More complex expressions can be used, like:
+
+```python
+pos: self.center_x - self.texture_size[0] / 2., self.center_y - self.textura_size[1] / 2.
+```
+
+This expression listens for a change in `center_x`, `center_y`, and `texture_size`. If one of them changes, the expression will be re-evaluated to update the `pos` field.
+
+You can also handle `on_` events inside your kv language. For example the TextInput class has a `focus` property whose auto-generated `on_focus` event can be accessed inside the kv language like so:
+
+```python
+TextInput:
+	on_focus: print(args)
+```
+
 https://kivy.org/doc/stable/guide/lang.html

@@ -50,7 +50,7 @@ A *class* rule, delcared by the name of a widget class between < > and followed 
 <MyWidget>:
 ```
 
-Rules use indentation for delimitation, like Python. Indentation should be four spaces per level, like the Python style guide [recommends](https://peps.python.org/pep-0008/#indentation)
+Rules use indentation for delimitation, like Python. Indentation should be four spaces per level, like the Python style guide [recommends](https://github.com/jonas-lucas-duarte/KivyHashLDash/blob/main/04_LinguagemKivy/PEP_8.md)
 
 There are three keywords specific to the Kv language:
 

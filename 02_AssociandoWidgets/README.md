@@ -1,5 +1,7 @@
 # 02 AssociandoWidgets
 
+[![HashLDash](https://i.ytimg.com/vi/xdxHJIfgG40/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB4f2athbpNmL0Xso9UcY7KaB8pCA)](https://youtu.be/xdxHJIfgG40 "02 Associando Widgets")
+
 ## BoxLayout
 
 BoxLayout arranges children in a vertical or horizontal box.

@@ -103,4 +103,32 @@ result = some_function_that_takes_arguments(
 )
 ```
 
+## Naming Conventions
+
+The naming conventions of Python's library are a bit of a mess, so we'll never get this completely consistent - nevertheless, here are the currently recommended naming standards. New modules and packages (including third party frameworks) should be written to these standards, but where an existing library has a different style, internal consistency is preferred.
+
+### Descriptive: Naming Styles
+
+There are a lot different naming styles. It helps to be able to recognize what naming style is being used, independently from what they are used for.
+
+The following naming styles are commonly distinguished:
+
+- `b` (single lowercase letter)
+
+- `B` (single uppercase letter)
+
+- `lowercase`
+
+- `lower_case_with_underscores`
+
+- `UPPERCASE`
+
+- `UPPER_CASE_WITH_UNDERSCORES`
+
+- `CapitalizedWords`
+
+- `mixedCase`
+
+- `Capitalized_Words_With_Underscores` (ugly!)
+
 https://peps.python.org/pep-0008

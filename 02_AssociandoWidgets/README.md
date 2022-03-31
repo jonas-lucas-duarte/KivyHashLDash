@@ -4,7 +4,7 @@
 
 ## BoxLayout
 
-BoxLayout arranges children in a vertical or horizontal box.
+`BoxLayout` arranges children in a vertical or horizontal box.
 
 To position widgets above/below each other, use a vertical BoxLayout:
 
@@ -28,8 +28,9 @@ layout.add_widget(btn2)
 
 Position hints are partially working, depending on the orientation:
 
-* If the orientation is vertical: x, right and center_x will be used.
-* If the orientation is horizontal: y, top and center_y will be used.
+- If the orientation is *vertical*: *x*, *right* and *center_x* will be used.
+
+- If the orientation is *horizontal*: *y*, *top* and *center_y* will be used.
 
 Kv Example:
 

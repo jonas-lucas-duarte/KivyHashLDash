@@ -2,7 +2,7 @@
 
 ## Label
 
-The Label widget is for rendering text. It supports ascii and unicode string:
+The `Label` widget is for rendering text. It supports ascii and unicode string:
 
 ```python
 # hello world text
@@ -22,7 +22,7 @@ l = Label(text='Hello world', font_size='20sp')
 
 Font size of the text, in pixels.
 
-font_size is a NumericProperty and defaults to 15sp.
+`font_size` is a `NumericProperty` and defaults to 15sp.
 
 https://kivy.org/doc/stable/api-kivy.uix.label.html
 

@@ -27,23 +27,3 @@ Font size of the text, in pixels.
 `font_size` is a `NumericProperty` and defaults to 15sp.
 
 https://kivy.org/doc/stable/api-kivy.uix.label.html
-
----
-
-## Metrics
-
-**A screen is defined by its physical size, density and resolution. These factors are essential for creating UI's with correct size everywhere.**
-
-**In Kivy, all the graphics pipelines work with pixels. But using pixels as a measurement unit is problematic because sizes change according to the screen.**
-
-### Dimensions
-
-**If you want to design you UI for different screen sizes, you will want better measurement units to work with. Kivy provides some more scable alternatives**
-
-#### Units
-
-*sp*
-
-**Scale-independent Pixels - This is like the dp unit, but it is also scaled by the user's font size preference. We recommend you use this unit when specifying font sizes, so the font size will be adjusted to both the screen density and the user's preference.**
-
-https://kivy.org/doc/stable/api-kivy.metrics.html

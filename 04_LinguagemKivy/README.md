@@ -1,5 +1,7 @@
 # 04 LinguagemKivy
 
+[![HashLDash](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)](https://youtu.be/bO7eXZRag6I "04 Linguagem Kivy")
+
 ## Kivy Language
 
 The Kivy language is a language dedicated to describing user interface and interactions. You could compare this language to Qt's QML (http://qt.nokia.com), but we included new concepts such as rule definitions (which are somewhat akin to what you may know from CSS), templationg and so on.
@@ -15,14 +17,6 @@ A rule is similar to a CSS rule. A rule applies to specific widgets (or classes 
 #### A Root Widget
 
 You can use the language to create yout entire user interface. A kv file must contain only one root widget at most.
-
-#### Dynamic Classes
-
-Dynamic classes let you create new widgets and rules on-the-fly, without any Python declaration.
-
-#### Templates
-
-Templates were used to populate parts of an application, such as styling the content of a list. They are now deprecated by dynamic classes.
 
 ### Syntax of a kv File
 

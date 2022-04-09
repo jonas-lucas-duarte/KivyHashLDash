@@ -14,13 +14,13 @@ https://kivy.org/doc/stable/api-kivy.app.html
 
 ## Button
 
-The Button is a Label with associated actions that are triggered when the button is pressed (or released after a click/touch). To configure the button, the same properties (padding, font_size, etc) and sizing system are used as for the Label class:
+The `Button` is a `Label` with associated actions that are triggered when the button is pressed (or released after a click/touch). To configure the button, the same properties (padding, font_size, etc) and sizing system are used as for the `Label` class:
 
 ```python
 button = Button(text='Hello world', font_size=14)
 ```
 
-To attach a callback when the button is pressed (clicked/touched), use bind:
+To attach a callback when the button is pressed (clicked/touched), use `bind`:
 
 ```python
 def callback(instance):
@@ -32,7 +32,7 @@ btn2 = Button(text='Hello world 2')
 btn2.bind(on_press=callback)
 ```
 
-If you want to be notified every time the button state changes, you can bin to the Button.state property:
+If you want to be notified every time the button state changes, you can bin to the `Button.state` property:
 
 ```python
 def callback(instance, value):
@@ -51,23 +51,5 @@ Button:
 	on_release: print("ahhh")
 	on_state: print("my current state is {}".format(self.state))
 ```
-
-### text (FROM LABEL)
-
-Text of the label.
-
-Creation of a simple hello world:
-
-```python
-widget = Label(text='Hello world')
-```
-
-If you want to create the widget with an unicode string, use:
-
-```python
-widget = Label(text=u'My unicode string')
-```
-
-text is a StringProperty and defaults to `´.
 
 https://kivy.org/doc/stable/api-kivy.uix.button.html

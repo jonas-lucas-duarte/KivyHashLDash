@@ -48,17 +48,30 @@ BoxLayout:
 		text: 'this on bottom'
 ```
 
+You can check the *examples/widgets/boxlayout_poshint.py* for a live example.
+
+> Note
+>
+> The *size_hint* uses the available space after subtracting all the fixed-size widgets. For example, if you have a layout that is 800px wide, and add three buttons like this:
+> ```python
+> btn1 = Button(text='Hello', size=(200, 100), size_hint=(None, None))
+> btn2 = Button(text='Kivy', size_hint=(.5, 1))
+> btn3 = Button(text='World', size_hint=(.5, 1))
+> ```
+>
+> The first button will be 200px wide as specified, the second and third will be 300px each, e.g. (800-200) * 0.5
+
 ### orientation
 
 Orientation of the layout.
 
-orientation is an OptionProperty and defaults to \`horizontal´. Can be \`vertical´ or \`horizontal´.
+`orientation` is an `OptionProperty` and defaults to 'horizontal'. Can be 'vertical' or 'horizontal'.
 
-### add_widget(widget, index=0, canvas=None) (FROM WIDGET)
+### add_widget(widget, \*args, \*\*kwargs)
 
 Add a new widget as a child of this widget.
 
-#### widget: Widget
+#### widget: `Widget`
 
 Widget to add to out list of children.
 
@@ -68,7 +81,7 @@ Index to insert the widget in the list. Notice that the default of 0 means the w
 
 #### canvas: str, defaults to None
 
-Canvas to add widget's canvas to. Can be \`before´, \`after´ or None for the default canvas.
+Canvas to add widget's canvas to. Can be 'before', 'after' or None for the default canvas.
 
 ```python
 from kivy.uix.button import Button
@@ -83,7 +96,7 @@ https://kivy.org/doc/stable/api-kivy.uix.boxlayout.html
 
 ## Label
 
-The Label widget is for rendering text. It supports ascii and unicode strings:
+The `Label` widget is for rendering text:
 
 ```python
 # hello world text
@@ -109,12 +122,6 @@ Creation of a simple hello world:
 widget = Label(text='Hello world')
 ```
 
-If you want to create the widget with an unicode string, use:
-
-```python
-widget = Label(text=u'My unicode string')
-```
-
-text is a StringProperty and defaults to `´.
+`text` is a `StringProperty` and defaults to ''.
 
 https://kivy.org/doc/stable/api-kivy.uix.label.html
